@@ -10,8 +10,8 @@ class HazelcastCommandlineClient < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Darwin_x86_64"
-      sha256 "b17e42c5229e639ab7dab990f6745c45266a7332f000049388f7754d51310196"
+      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Darwin_x86_64"
+      sha256 "2813d0571b40d9fc74d9b1001b401435bd352b44525c80572a1bfe076a098a5a"
 
       def install
         system "make"
@@ -21,8 +21,8 @@ class HazelcastCommandlineClient < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Darwin_arm64"
-      sha256 "05126de0e7ba89639f4fdde7ebd82b7f0692cc0e6f75f1eb254a2e46dfe2c643"
+      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Darwin_arm64"
+      sha256 "4bedf6782bf71472ed4ce61c2cb0fa4daa7ec7d6733e17f9d308c6badf36ced9"
 
       def install
         system "make"
@@ -35,8 +35,8 @@ class HazelcastCommandlineClient < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Linux_x86_64"
-      sha256 "031bccb51c39b9c5fe10d9d786917778db02663f8ec7505ad95a05b2c68edcd8"
+      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Linux_x86_64"
+      sha256 "8cc3a17c208df67d01dcffffad6897ef114a85062916922b3a0bedb24464ea5e"
 
       def install
         system "make"
@@ -46,8 +46,8 @@ class HazelcastCommandlineClient < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Linux_arm64"
-      sha256 "f9d8d70ed39704b6a68b5ed01c74439f2bdd31a4298937bd41b7c4128f50f832"
+      url "https://github.com/hazelcast/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Linux_arm64"
+      sha256 "11c93bc316062c13ef291ea3221b44e2fea780e5fcd3891a2d63dcbf3e8520da"
 
       def install
         system "make"
