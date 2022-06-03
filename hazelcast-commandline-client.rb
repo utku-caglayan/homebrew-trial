@@ -9,23 +9,21 @@ class HazelcastCommandlineClient < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Darwin_x86_64"
-      sha256 "6d060189e6f4d0af4e0bdedb0e4b74b5fbd0cdd80a80d8203834e0d3e255690a"
+    if Hardware::CPU.arm?
+      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hazelcast-commandline-client_0.0.1-goreleaser_Darwin_arm64.tar.gz"
+      sha256 "3b1d95818a04da2b8cce2dc564254832579be57e8c8a5cfe3d5872fc96a6e123"
 
       def install
-        system "make"
         bin.install "hzc"
         bash_completion.install "extras/bash_completion.sh"
         zsh_completion.install "extras/zsh_completion.zsh" => "_hzc"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Darwin_arm64"
-      sha256 "1bb3044997b9942c1f2d7332b269e062502aec680d8cdf47fbdc30c803a419d1"
+    if Hardware::CPU.intel?
+      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hazelcast-commandline-client_0.0.1-goreleaser_Darwin_x86_64.tar.gz"
+      sha256 "bf3f6974f6d1f9711394aca091d75849006151f33c35ab264f32077d8c8d36b6"
 
       def install
-        system "make"
         bin.install "hzc"
         bash_completion.install "extras/bash_completion.sh"
         zsh_completion.install "extras/zsh_completion.zsh" => "_hzc"
@@ -34,23 +32,21 @@ class HazelcastCommandlineClient < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Linux_x86_64"
-      sha256 "9a0f1541fc2dba48246a3c82b49f315036c6c73b60b2f49c1e720cd6c6fac388"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hazelcast-commandline-client_0.0.1-goreleaser_Linux_arm64.tar.gz"
+      sha256 "835940fd72baea5bac6951952717659e48051fe12603bbdfb1596ac403c628e6"
 
       def install
-        system "make"
         bin.install "hzc"
         bash_completion.install "extras/bash_completion.sh"
         zsh_completion.install "extras/zsh_completion.zsh" => "_hzc"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hz-cli_0.0.1-goreleaser_Linux_arm64"
-      sha256 "eaa858f04eafa1241001ba39e8c753bfbe16a46fba858282027fa8d5c0469a51"
+    if Hardware::CPU.intel?
+      url "https://github.com/utku-caglayan/hazelcast-commandline-client/releases/download/v0.0.1-goreleaser/hazelcast-commandline-client_0.0.1-goreleaser_Linux_x86_64.tar.gz"
+      sha256 "2ac347b789b83e710e4bee637defdad929fba065f1698ad2283ef05585789066"
 
       def install
-        system "make"
         bin.install "hzc"
         bash_completion.install "extras/bash_completion.sh"
         zsh_completion.install "extras/zsh_completion.zsh" => "_hzc"
